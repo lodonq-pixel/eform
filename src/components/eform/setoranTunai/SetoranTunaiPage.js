@@ -3,7 +3,7 @@ import ProgressSteps from '../../ProgressSteps';
 import Header from '../../Header';
 import DataPenerima from './DataPenerima';
 import DetailSetoran from './DetailSetoran';
-import { setoranTunai, global } from '../../../constants/labels';
+import { global, setoranTunai } from '../../../constants/labels';
 
 function SetoranTunaiPage({ onBack }) {
   const [accountNumber, setAccountNumber] = useState('');
@@ -19,11 +19,11 @@ function SetoranTunaiPage({ onBack }) {
 
   const currentStep = 0;
 
-  const formatCurrency = (value) => {
+  const formatCurrency = value => {
     return new Intl.NumberFormat('id-ID').format(value);
   };
 
-  const handleNominalChange = (e) => {
+  const handleNominalChange = e => {
     const value = e.target.value.replace(/\D/g, '');
     setNominal(formatCurrency(value));
   };
@@ -39,17 +39,17 @@ function SetoranTunaiPage({ onBack }) {
       {/* Content */}
       <div className="flex-1 px-4 py-6 space-y-6">
         {/* Data Penerima Section */}
-        <DataPenerima 
+        <DataPenerima
           accountNumber={accountNumber}
-          onAccountNumberChange={(e) => setAccountNumber(e.target.value)}
+          onAccountNumberChange={e => setAccountNumber(e.target.value)}
         />
 
         {/* Detail Setoran Section */}
-        <DetailSetoran 
+        <DetailSetoran
           nominal={nominal}
           onNominalChange={handleNominalChange}
           message={message}
-          onMessageChange={(e) => setMessage(e.target.value)}
+          onMessageChange={e => setMessage(e.target.value)}
         />
       </div>
 

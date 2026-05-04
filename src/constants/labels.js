@@ -4,7 +4,7 @@ export const global = {
   setoran: 'Setoran',
   tunai: 'Tunai',
   tarikan: 'Tarikan'
-}
+};
 
 export const setoranTunai = {
   labels: {
@@ -22,7 +22,7 @@ export const setoranTunai = {
     konfirmasi: 'Konfirmasi',
     ringkasanTransaksi: 'Ringkasan Transaksi'
   }
-}
+};
 
 export const placeholders = {
   nomorRekening: 'Masukkan nomor rekening',
